@@ -1,0 +1,19 @@
+<div>
+  <table class="w-full border-collapse border border-gray-300">
+    <thead>
+      <tr>
+         <td class="py-3 px-6 border-b border-gray-300">Property ID</td>
+         <td class="py-3 px-6 border-b border-gray-300">Property name</td>
+         <td class="py-3 px-6 border-b border-gray-300">See property</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let property of fullPropertyList">
+         <td class="py-3 px-6 border-b border-gray-300">{{property.id}}</td>
+         <td class="py-3 px-6 border-b border-gray-300">{{property.name}}</td>
+         <td class="py-3 px-6 border-b border-gray-300"> HERE SHOULD BE A BUTTON</td>
+<!--         <td class="py-3 px-6 border-b border-gray-300"><a [routerLink]="['/property', property.id]">See property</a></td>-->
+      </tr>
+    </tbody>
+  </table>
+</div>
