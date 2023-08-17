@@ -1,0 +1,40 @@
+<div class="bg-gray-100 min-h-screen py-6 flex flex-col justify-center sm:py-12">
+  <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+    <div class="absolute inset-0 bg-gradient-to-r from-teal-500 to-teal-100 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+    <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+      <div class="max-w-md mx-auto">
+        <div>
+          <h1 class="text-2xl font-semibold text-gray-800">Détails de la propriété</h1>
+          <p class="mt-2 text-sm text-gray-600">ID: {{ property.id }}</p>
+          <p class="mt-2 text-sm text-gray-600">Nom: {{ property.name }}</p>
+          <p class="mt-2 text-sm text-gray-600">Loyer: {{ property.rent | currency: 'EUR' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tableau des loyers -->
+  <div class="mt-10 mx-auto max-w-3xl">
+    <h2 class="text-lg font-semibold text-gray-800">Liste des loyers</h2>
+    <div class="overflow-hidden rounded-lg shadow">
+      <div class="border-b border-teal-500 px-6 py-4 bg-teal-100">
+        <table class="min-w-full bg-white">
+          <thead class="bg-teal-100">
+          <tr>
+            <th class="py-3 px-6 text-left text-sm font-medium text-teal-700 uppercase tracking-wider">Mois</th>
+            <th class="py-3 px-6 text-left text-sm font-medium text-teal-700 uppercase tracking-wider">Date paiement</th>
+            <th class="py-3 px-6 text-left text-sm font-medium text-teal-700 uppercase tracking-wider">Montant</th>
+          </tr>
+          </thead>
+          <tbody class="divide-y divide-teal-300">
+          <tr *ngFor="let rent of rents">
+            <td class="py-4 px-6 whitespace-nowrap">{{ rent.month }}</td>
+            <td class="py-4 px-6 whitespace-nowrap">{{ rent.date | date: 'dd MMMM yyyy'}}</td>
+            <td class="py-4 px-6 whitespace-nowrap">{{ rent.rent | currency: 'EUR' }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

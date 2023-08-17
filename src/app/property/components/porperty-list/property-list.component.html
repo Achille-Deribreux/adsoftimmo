@@ -13,11 +13,8 @@
         <td class="py-3 px-6 border-b border-gray-300 text-center">{{property.id}}</td>
         <td class="py-3 px-6 border-b border-gray-300 text-center">{{property.name}}</td>
         <td class="py-3 px-6 border-b border-gray-300 text-center">
-          <button class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-4 rounded transition">
-            Aller à la page
-          </button>
+            <a routerLink="/properties/1" class="bg-teal-500 hover:bg-teal-800 text-white font-bold py-2 px-4 rounded-full">Voir</a>
         </td>
-        <!-- <td class="py-3 px-6 border-b border-gray-300"><a [routerLink]="['/property', property.id]">See property</a></td> -->
       </tr>
       </tbody>
     </table>
