@@ -7,8 +7,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HeaderComponent} from './shared/components/header/header.component';
 import {RouterModule} from "@angular/router";
 import {PropertyDetailComponent} from './property/components/property-detail/property-detail.component';
-import { HomeComponent } from './home/home/home.component';
-import { PageNotFoundComponent } from './home/page-not-found/page-not-found.component';
+import { HomeComponent } from './home/components/home/home.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { LeaseHolderListComponent } from './leaseholder/components/lease-holder-list/lease-holder-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PageNotFoundComponent } from './home/page-not-found/page-not-found.comp
     HeaderComponent,
     PropertyDetailComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LeaseHolderListComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import { PageNotFoundComponent } from './home/page-not-found/page-not-found.comp
     RouterModule.forRoot([
       {path: 'properties/:id', component: PropertyDetailComponent},
       {path: 'properties', component: PropertyListComponent},
+      {path: 'leaseholders', component: LeaseHolderListComponent},
       {path: '', component: HomeComponent, pathMatch: 'full'},
       {path: '**', component: PageNotFoundComponent},
     ])],

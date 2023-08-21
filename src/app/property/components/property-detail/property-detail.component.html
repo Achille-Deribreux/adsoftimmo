@@ -37,4 +37,32 @@
       </div>
     </div>
   </div>
+
+  <!-- Tableau des locataires -->
+  <div class="mt-10 mx-auto max-w-3xl">
+    <h2 class="text-lg font-semibold text-gray-800">Liste des locataires</h2>
+    <div class="overflow-hidden rounded-lg shadow">
+      <div class="border-b border-teal-500 px-6 py-4 bg-teal-100">
+        <table class="min-w-full bg-white">
+          <thead class="bg-teal-100">
+          <tr>
+            <th class="py-3 px-6 text-left text-sm font-medium text-teal-700 uppercase tracking-wider">Prénom</th>
+            <th class="py-3 px-6 text-left text-sm font-medium text-teal-700 uppercase tracking-wider">Nom</th>
+            <th class="py-3 px-6 text-left text-sm font-medium text-teal-700 uppercase tracking-wider">Email</th>
+            <th class="py-3 px-6 text-left text-sm font-medium text-teal-700 uppercase tracking-wider">Téléphone</th>
+          </tr>
+          </thead>
+          <tbody class="divide-y divide-teal-300">
+          <tr *ngFor="let rentholder of leaseholders" [ngClass]="{ 'bg-yellow-200': rentholder.active }">
+            <td class="py-4 px-6 whitespace-nowrap">{{ rentholder.firstname }}</td>
+            <td class="py-4 px-6 whitespace-nowrap">{{ rentholder.name }}</td>
+            <td class="py-4 px-6 whitespace-nowrap">{{ rentholder.email }}</td>
+            <td class="py-4 px-6 whitespace-nowrap">{{ rentholder.phone }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
 </div>
