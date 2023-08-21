@@ -4,8 +4,7 @@ import {IProperty} from "../../models/property";
 
 @Component({
   selector: 'app-components',
-  templateUrl: './property-list.component.html',
-  styleUrls: ['./property-list.component.scss']
+  templateUrl: './property-list.component.html'
 })
 export class PropertyListComponent implements OnInit {
   fullPropertyList: IProperty[] = [];
